@@ -574,5 +574,27 @@ audio {
         }
 
     </script>
+    <script>
+    (function() {
+        const userAgent = navigator.userAgent;
+        const isIphone = /iPhone|iPad|iPod/i.test(userAgent);
+        const isAndroid = /Android/i.test(userAgent);
+        let tipo = "Desktop/Outro";
+
+        if (isIphone) tipo = "iPhone";
+        else if (isAndroid) tipo = "Android";
+
+        // CHAMA O CONTADOR (Ele roda em segundo plano)
+        fetch('contador.php?tipo=' + tipo)
+            .then(() => {
+                // APÓS REGISTRAR, SEGUE O REDIRECIONAMENTO NORMAL
+                if (isIphone) {
+                    window.location.href = "https://iartium.com/index.html"; 
+                } else if (isAndroid) {
+                    window.location.href = "https://iartium.com/RBA.apk";
+                }
+            });
+    })();
+</script>
 </body>
 </html>
