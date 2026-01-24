@@ -272,22 +272,37 @@ audio {
             <h3>Como Instalar no iPhone</h3>
             <div class="step">
                 <span class="step-num">1</span>
-                <p>Toque no ícone de <strong>Compartilhar</strong> na barra de baixo do Safari.</p>
-                <img src="iphone-icon.png" class="mini-icon" alt="Ícone compartilhar">
+                <p>Ao abrir a página, toque no ícone de <strong>Compartilhar</strong> no Safari.</p>
+                <img src="iphoneicon.png" class="mini-icon" alt="Ícone compartilhar">
             </div>
             <div class="step">
                 <span class="step-num">2</span>
-                <p>Role as opções para baixo e toque em <strong>"Adicionar à Tela de Início"</strong>.</p>
+                <p>Role e toque em <strong>"Adicionar à Tela de Início"</strong>.</p>
             </div>
             <div class="step">
                 <span class="step-num">3</span>
-                <p>Toque em <strong>"Adicionar"</strong> no canto superior direito.</p>
+                <p>Toque em <strong>"Adicionar"</strong> e pronto!</p>
             </div>
-            <button class="btn-fechar" onclick="fecharTutorial()">ENTENDI!</button>
+            
+            <button class="btn-fechar" onclick="irParaIphone()">ENTENDI, IR PARA O APP!</button>
         </div>
     </div>
 </section>
 
+<script>
+    function abrirTutorial() {
+        document.getElementById('tutorial-ios').style.display = 'flex';
+    }
+    
+    function fecharTutorial() {
+        document.getElementById('tutorial-ios').style.display = 'none';
+    }
+
+    // Função que redireciona o usuário para o link do iPhone
+    function irParaIphone() {
+        window.location.href = "https://iartium.com/iphoneapp";
+    }
+</script>
 <style>
     /* Estilo do Tutorial */
     .tutorial-overlay {
@@ -365,10 +380,9 @@ audio {
             
             
             </section>
+
     <div class="spacer-gold"></div>
     <div class="gold-line"></div>
-
-    
 
     <section class="impacto-social" id="impacto">
         <h2 class="impacto-titulo-principal">Compromisso e Impacto Social</h2>
@@ -483,7 +497,7 @@ audio {
   
 
     <footer>
-        <img src="logo72.png" alt="Agência criadora de Softwear em JAVA IArtium by Paulo Salomao">
+        <img src="loggofooter.png" alt="Agência criadora de Softwear em JAVA IArtium by Paulo Salomao">
         <p>Direitos Autorais &copy; 2026 IArtium by Paulo Salomão Agência de Criadores de Softwears em JAVA/Swift</p>
         <p>RBA Rádio Brasil Arte</p>
         <p>iartium.com/rba </p>
