@@ -244,32 +244,133 @@ audio {
     <div class="spacer-gold"></div>
     <div class="gold-line"></div>
 
-    <section class="section-rba" id="download">
-        <div class="rba-text">
-            <h2>
-                <span class="asterisk">"</span> 
-                The company Paulo Salomão, together with IArtium technology, is contributing to Brazilian culture by delivering the Rádio Brasil Artes app for free.
-                <span class="asterisk">"</span>
-            </h2>
-            <p>An app for those who love Brazilian music, bossa nova, sertanejo, podcasts, and the promotion of musical values.</p>
-        </div>
+  <section class="section-rba" id="download">
+    <div class="rba-text">
+        <h2>
+            <span class="asterisk">"</span> 
+            A empresa Paulo Salomão juntamente com a tecnologia IArtium está contribuindo com a cultura brasileira e entregando gratuitamente os aplicativos Rádio Brasil Artes
+            <span class="asterisk">"</span>
+        </h2>
+    </div>
+    
+    <div class="download-container">
+        <img src="icone-app.png" alt="Aplicativo RBA" class="app-icon">
         
-        <div class="download-container">
-            <img src="icone-app.png" alt="Aplicativo RBA Rádio Brasil Artes softwear em JAVA" class="app-icon">
-            <div class="download-buttons">
-                <a href="RBA.apk" download="RBA-Radio-Brasil-Artes.apk" class="btn-download btn-android">
-                    INSTALL RBA ANDROID (.APK)
-                </a>
-                <a href="https://wa.me/5564992962999?text=Olá!%20Tenho%20interesse%20na%20versão%20iOS%20da%20RBA." class="btn-download btn-ios" target="_blank">
-                    RBA for iOS (Coming Soon)
-                </a>
-            </div>
-            <div style="color: #666; font-size: 0.85rem;">
-                <p><strong>Android version: 5.1 MB</strong></p>
-                <p>✅ Secure file hosted via GitHub.</p>
-            </div>
+        <div class="download-buttons">
+            <a href="https://iartium.com/RBA.apk" class="btn-download btn-android">
+                INSTALAR RBA ANDROID (.APK)
+            </a>
+
+            <button onclick="abrirTutorial()" class="btn-download btn-ios">
+                INSTALAR RBA NO iPHONE (iOS)
+            </button>
         </div>
-    </section>
+    </div>
+
+    <div id="tutorial-ios" class="tutorial-overlay" onclick="fecharTutorial()">
+        <div class="tutorial-card" onclick="event.stopPropagation()">
+            <h3>Como Instalar no iPhone</h3>
+            <div class="step">
+                <span class="step-num">1</span>
+                <p>Ao abrir a página, toque no ícone de <strong>Compartilhar</strong> no Safari.</p>
+                <img src="iphoneicon.png" class="mini-icon" alt="Ícone compartilhar">
+            </div>
+            <div class="step">
+                <span class="step-num">2</span>
+                <p>Role e toque em <strong>"Adicionar à Tela de Início"</strong>.</p>
+            </div>
+            <div class="step">
+                <span class="step-num">3</span>
+                <p>Toque em <strong>"Adicionar"</strong> e pronto!</p>
+            </div>
+            
+            <button class="btn-fechar" onclick="irParaIphone()">ENTENDI, IR PARA O APP!</button>
+        </div>
+    </div>
+</section>
+
+<script>
+    function abrirTutorial() {
+        document.getElementById('tutorial-ios').style.display = 'flex';
+    }
+    
+    function fecharTutorial() {
+        document.getElementById('tutorial-ios').style.display = 'none';
+    }
+
+    // Função que redireciona o usuário para o link do iPhone
+    function irParaIphone() {
+        window.location.href = "https://iartium.com/iphoneapp";
+    }
+</script>
+<style>
+    /* Estilo do Tutorial */
+    .tutorial-overlay {
+        display: none; position: fixed; top: 0; left: 0; width: 100%; height: 100%;
+        background: rgba(0,0,0,0.8); z-index: 9999; align-items: center; justify-content: center;
+    }
+    .tutorial-card {
+        background: #f8f4dc; width: 85%; max-width: 350px; padding: 25px;
+        border-radius: 20px; text-align: center; border: 3px solid #084424;
+    }
+    .tutorial-card h3 { color: #084424; margin-bottom: 20px; }
+    .step { display: flex; align-items: center; gap: 15px; margin-bottom: 20px; text-align: left; }
+    .step-num {
+        background: #084424; color: #fcd404; width: 30px; height: 30px;
+        border-radius: 50%; display: flex; align-items: center; justify-content: center;
+        font-weight: bold; flex-shrink: 0;
+    }
+    .mini-icon { width: 20px; margin-left: 5px; vertical-align: middle; }
+    .btn-fechar {
+        background: #084424; color: #fff; border: none; padding: 12px 30px;
+        border-radius: 8px; font-weight: bold; cursor: pointer; width: 100%;
+    }
+    /* Estilos dos Botões */
+    .btn-download {
+        display: block; width: 100%; max-width: 300px; padding: 15px;
+        text-decoration: none; font-weight: bold; border-radius: 8px;
+        border: none; cursor: pointer; font-size: 16px; margin: 5px 0;
+    }
+    .btn-android { background-color: #084424; color: #ffffff; }
+    .btn-ios { background-color: #fcd404; color: #084424; }
+</style>
+
+<script>
+    function abrirTutorial() {
+        document.getElementById('tutorial-ios').style.display = 'flex';
+    }
+    function fecharTutorial() {
+        document.getElementById('tutorial-ios').style.display = 'none';
+    }
+</script>
+
+<style>
+    /* Estilos para manter a harmonia visual */
+    .download-container { text-align: center; padding: 20px; }
+    .app-icon { width: 100px; border-radius: 20px; margin-bottom: 20px; box-shadow: 0 4px 10px rgba(0,0,0,0.1); }
+    
+    .download-buttons { display: flex; flex-direction: column; gap: 15px; align-items: center; margin-bottom: 20px; }
+    
+    .btn-download {
+        display: block;
+        width: 100%;
+        max-width: 300px;
+        padding: 15px;
+        text-decoration: none;
+        font-weight: bold;
+        border-radius: 8px;
+        transition: transform 0.2s;
+        text-align: center;
+    }
+    
+    .btn-download:active { transform: scale(0.98); }
+
+    .btn-android { background-color: #084424; color: #ffffff; }
+    .btn-ios { background-color: #fcd404; color: #084424; }
+    
+    .asterisk { color: #fcd404; font-size: 2rem; vertical-align: middle; }
+</style>
+
 
     <div class="spacer-gold"></div>
     <div class="gold-line"></div>
